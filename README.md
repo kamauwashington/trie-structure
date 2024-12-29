@@ -41,17 +41,23 @@ graph TD;
     alb-->alba[a]
     alba-->alban[n]
     alban-->albany[y]
+    albany-->-stop@{ shape: dbl-circ, label: "End" }
     alb-->albu[u]
     albu-->album[m]
+    album-->album-stop@{ shape: dbl-circ, label: "End" }
     al-->ali[i]
     ali-->alic[c]
     alic-->alice[e]
+    alice-->alice-stop@{ shape: dbl-circ, label: "End" }
 
     Root-->b[b]
     b-->bo[o]
     bo-->bob[b]
+    bob-->bob-stop@{ shape: dbl-circ, label: "End" }
     bo-->boo[o]
     boo-->book[k]
+    book-->book-stop@{ shape: dbl-circ, label: "End" }
     bo-->bor[r]
     bor-->born[n]
+    born-->born-stop@{ shape: dbl-circ, label: "End" }
 ```
