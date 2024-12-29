@@ -33,7 +33,7 @@ Before you continue, ensure you have met the following requirements:
     * On Mac -> Press <kbd>&#8984;</kbd> + <kbd>K</kbd> then <kbd>&#8984;</kbd> + <kbd>/</kbd> 
     * On Windows & Linux -> Press <kbd>Ctrl</kbd> + <kbd>K</kbd> then <kbd>Ctrl</kbd> + <kbd>/</kbd> 
 
-
+```mermaid
 graph TD;
     Root[Root Trie Node]-->a;
     a-->al[l]
@@ -54,3 +54,4 @@ graph TD;
     boo-->book[k]
     bo-->bor[r]
     bor-->born[n]
+```
