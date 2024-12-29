@@ -34,15 +34,3 @@ export function search(input : string, trie : TrieNode) : [result : boolean, las
     // with the last Trie being the end of the word
     return [(i == input.length) && workingTrie.endOfWord,workingTrie];
 }
-
-export function search2(input : string, trieNode : TrieNode) : [result : boolean, lastTrie : TrieNode | undefined] {
-    let workingNode : TrieNode = trieNode;
-
-    for (let character of input) {
-        let pos = character.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0);
-        if (!workingNode.childNodes[pos]) return [false,undefined];
-        workingNode = workingNode.childNodes[pos];
-    }
-
-    return [workingNode.endOfWord,workingNode];
-}

@@ -31,15 +31,3 @@ export function insert(input : string, trieNode : TrieNode) : TrieNode {
     return workingNode;
 }
 
-export function insert2(input : string, trieNode : TrieNode) : void {
-    // this Trie will be overwritten as the Trie is walked
-    let workingNode : TrieNode = trieNode;
-
-    for (let character of input) {
-        let pos = character.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0);
-        if (!workingNode.childNodes[pos]) workingNode.childNodes[pos] = new TrieNode();
-        workingNode = workingNode.childNodes[pos];
-    }
-
-    workingNode.endOfWord = true;
-}
