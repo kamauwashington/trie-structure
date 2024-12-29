@@ -14,24 +14,14 @@ A **Trie** (pronounced "try") is a tree-like data structure used to efficiently 
 * **Phone Directory**: A Trie can store contacts like "John," "Johnny," and "Joanna," enabling fast lookups starting with "Jo."
 * **IP Routing**: In network systems, a Trie can store and search IP address prefixes for routing decisions.
 
-## Prerequisites
+## Trie Visualization
 
-Before you continue, ensure you have met the following requirements:
+A Trie is an efficient data structure for storing and searching strings allowing word operations to be performed in O(n) time, where n is the length of the word, regardless of the number of words stored.
 
-* NodeJS v20 or higher installed
-* Npm installed
-
-## Running the Application
-
-1) Repeat steps 4 through 6 opening a new terminal for each of the below commands (issued at the root of this repository)
-    * **npm run ema-subscription**
-    * **npm run sma-subscription**
-    * **npm run overview-subscription**
-
-## Notes
-* This repository is heavily commented to provide context as to what and why, if in VS Code feel free to collapse all comments if they are obtrusive
-    * On Mac -> Press <kbd>&#8984;</kbd> + <kbd>K</kbd> then <kbd>&#8984;</kbd> + <kbd>/</kbd> 
-    * On Windows & Linux -> Press <kbd>Ctrl</kbd> + <kbd>K</kbd> then <kbd>Ctrl</kbd> + <kbd>/</kbd> 
+* **IN BLUE** Given the words **albany, album, alice** a Trie search for **album** searches for by walking
+    * a -> l -> b -> u -> m _instead of_ searching through the 3 words for a match
+* **IN GREEN** Given the words **bob, book, boorn** a Trie search for **book** searches for by walking
+    * b -> o -> o -> k _instead of_ searching through the 3 words for a match
 
 ```mermaid
 graph TD;
@@ -74,3 +64,24 @@ graph TD;
     style book fill:#27ae60
     style book-stop fill:#e74c3c
 ```
+
+
+## Prerequisites
+
+Before you continue, ensure you have met the following requirements:
+
+* NodeJS v20 or higher installed
+* Npm installed
+
+## Running the Application
+
+1) Repeat steps 4 through 6 opening a new terminal for each of the below commands (issued at the root of this repository)
+    * **npm run ema-subscription**
+    * **npm run sma-subscription**
+    * **npm run overview-subscription**
+
+## Notes
+* This repository is heavily commented to provide context as to what and why, if in VS Code feel free to collapse all comments if they are obtrusive
+    * On Mac -> Press <kbd>&#8984;</kbd> + <kbd>K</kbd> then <kbd>&#8984;</kbd> + <kbd>/</kbd> 
+    * On Windows & Linux -> Press <kbd>Ctrl</kbd> + <kbd>K</kbd> then <kbd>Ctrl</kbd> + <kbd>/</kbd> 
+
