@@ -60,4 +60,17 @@ graph TD;
     bo-->bor[r]
     bor-->born[n]
     born-->born-stop@{ shape: dbl-circ, label: "End" }
+
+    style a fill:#2980b9
+    style al fill:#2980b9
+    style alb fill:#2980b9
+    style albu fill:#2980b9
+    style album fill:#2980b9
+    style album-stop fill:#e74c3c
+
+    style b fill:#27ae60
+    style bo fill:#27ae60
+    style boo fill:#27ae60
+    style book fill:#27ae60
+    style book-stop fill:#e74c3c
 ```
