@@ -20,7 +20,7 @@ A Trie is an efficient data structure for storing and searching strings allowing
 
 * **IN BLUE** Given the words **albany, album, alice** a Trie search for **album** searches for by walking
     * a -> l -> b -> u -> m _instead of_ searching through the 3 words for a match
-* **IN GREEN** Given the words **bob, book, boorn** a Trie search for **book** searches for by walking
+* **IN GREEN** Given the words **bob, book, born** a Trie search for **book** searches for by walking
     * b -> o -> o -> k _instead of_ searching through the 3 words for a match
 
 ```mermaid
