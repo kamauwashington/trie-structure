@@ -75,10 +75,8 @@ Before you continue, ensure you have met the following requirements:
 
 ## Running the Application
 
-1) Repeat steps 4 through 6 opening a new terminal for each of the below commands (issued at the root of this repository)
-    * **npm run ema-subscription**
-    * **npm run sma-subscription**
-    * **npm run overview-subscription**
+1) The application runs as an standard ExpressJS application on port 3000. Ensure that **npm install** is run prior to executing the following command : 
+    * **npm run serve**
 
 ## Notes
 * This repository is heavily commented to provide context as to what and why, if in VS Code feel free to collapse all comments if they are obtrusive

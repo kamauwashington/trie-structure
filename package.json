@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This project implements a Trie (Prefix-Tree) structure using TypeScript, designed as an educational exercise to foster continuous learning.",
   "scripts": {
-    "start": "ts-node ./src/index.ts"
+    "serve": "ts-node ./src/index.ts"
   },
   "author": "Kamau Washington",
   "license": "MIT",

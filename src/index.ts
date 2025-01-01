@@ -22,7 +22,7 @@ const app: Application = express();
 const port = 3000;
 
 app.use(express.json())
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(['/','/api-docs'], swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.post('/match', (req: Request, res: Response) => {
