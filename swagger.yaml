@@ -6,7 +6,7 @@ info:
 servers:
   - url: http://localhost:3000
 paths:
-  /search:
+  /match:
     post:
       summary: Looks for an occurance of an input in the Trie Structure. 
       description: The Search method navigates the Trie data structure character by character, starting from the root node. For each character in the input string, it traverses to the corresponding child node. If a character does not have a corresponding child node, the search terminates, returning false to indicate the string does not exist in the Trie. If all characters are successfully traversed and the node at the end of the traversal is marked as an end-of-word node, the method returns true to confirm the existence of the input string in the Trie. Otherwise, it returns false if the traversal reaches a node that is not marked as the end of a valid word.
