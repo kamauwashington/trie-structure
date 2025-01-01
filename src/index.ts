@@ -1,8 +1,9 @@
-import { TrieNode, insert, suggest, search } from "./Trie";
+import { TrieNode, insert, suggest, match } from "./Trie";
 import words from "./data/words.json";
 import swaggerUi from 'swagger-ui-express';
 import yaml from 'yamljs';
 import express, { Application, Request, Response } from 'express';
+
 
 // initialize a root TrieNode
 const trieNode : TrieNode = new TrieNode();
@@ -26,7 +27,7 @@ app.use(['/','/api-docs'], swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.post('/match', (req: Request, res: Response) => {
-    const success : boolean = search(req.body?.input,trieNode);
+    const success : boolean = match(req.body?.input,trieNode);
     res.json({
         success : success
     })
