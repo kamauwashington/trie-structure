@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: NodeJS Trie Structure Implementation
+  version: 1.0.0
+  description: A simple API for testing Swagger UI
+servers:
+  - url: http://localhost:3000
+paths:
+  /search:
+    post:
+      summary: Looks for an occurance of an input in the Trie Structure. 
+      description: The Search method navigates the Trie data structure character by character, starting from the root node. For each character in the input string, it traverses to the corresponding child node. If a character does not have a corresponding child node, the search terminates, returning false to indicate the string does not exist in the Trie. If all characters are successfully traversed and the node at the end of the traversal is marked as an end-of-word node, the method returns true to confirm the existence of the input string in the Trie. Otherwise, it returns false if the traversal reaches a node that is not marked as the end of a valid word.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  example: "lookup"
+                  description: The input string to be processed.
+              required:
+                - input
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: True/False indicating the existing of the provided input in the Trie.
+                examples:
+                successResponse:
+                  summary: Example of a successful operation
+                  value:
+                    success: true
+                failureResponse:
+                  summary: Example of a failed operation
+                  value:
+                    success: false
+  /suggest:
+    post:
+      summary: Retrieves a list of words or phrases that match the input prefix.
+      description: Retrieves a list of autocomplete suggestions based on the provided input prefix by efficiently searching a Trie data structure. A Trie, also known as a prefix tree, is a specialized data structure designed for rapid retrieval of words or sequences that share a common prefix. This method takes an input string (prefix) and traverses the Trie to identify all potential matches that begin with the provided prefix. The resulting matches are returned as a list of strings, sorted based on the Trie’s structure or other predefined criteria such as alphabetical order or relevance.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  description: The input prefix for which suggestions are to be retrieved.
+                  example: "art"
+                size :
+                  type: integer
+                  minimum: 1
+                  maximum: 25
+                  description : The maximum number of results returned. The default value is 10
+              required:
+                - input
+      responses:
+        '200':
+          description: A list of suggestions matching the input prefix.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  suggestions:
+                    type: array
+                    items:
+                      type: string
+                    description: A list of suggestions based on the input prefix.
+                    example: ["art","article","artist"]
+  /insert:
+    post:
+      summary: Insert a value into the Trie
+      description: Inserts a new value into a Trie data structure, enabling it to be efficiently searched or matched in future operations. The insert method takes an input string (input) and systematically adds each character of the string into the Trie, creating new nodes as needed for characters not already present. If the input string shares a prefix with existing entries, the method reuses the common nodes, optimizing memory usage and maintaining the structural integrity of the Trie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  description: The value to be inserted into the Trie.
+                  example: "autocomplete"
+              required:
+                - input
+      responses:
+        '200':
+          description: Indicates whether the value was successfully inserted into the Trie.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: True if the insertion was successful, false otherwise.
+                    example: true
