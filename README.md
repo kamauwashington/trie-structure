@@ -77,7 +77,7 @@ Before you continue, ensure you have met the following requirements:
 
 1) The application runs as an standard ExpressJS application on port 3000. Ensure that **npm install** is run prior to executing the following command : 
     * **npm run serve**
-    * open your browser and navigate to [http://localhost:300](http://localhost:3000)
+    * open your browser and navigate to [http://localhost:3000](http://localhost:3000)
     * you should see the following
     ![OAS](screenshots/oas-root.png)
 
