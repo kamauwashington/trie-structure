@@ -16,6 +16,8 @@ for (let word of words) {
 // Load Swagger YAML definition
 const swaggerDocument = yaml.load('./swagger.yaml');
 
+console.log(match("lookup",trieNode))
+
 
 //-------------------- standard Express JS implementation (nothing special here) ------------------//
 
@@ -23,7 +25,7 @@ const app: Application = express();
 const port = 3000;
 
 app.use(express.json())
-app.use(['/','/api-docs'], swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 
 app.post('/match', (req: Request, res: Response) => {
@@ -46,6 +48,8 @@ app.post('/insert', (req: Request, res: Response) => {
         success : workingTrieNode.endOfWord
     })
 });
+
+app.use(['/','/api-docs'], swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
